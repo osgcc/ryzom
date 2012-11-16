@@ -1,0 +1,9 @@
+FILE(GLOB SRC *.cpp *.h)
+
+ADD_EXECUTABLE(ig_add ${SRC})
+
+TARGET_LINK_LIBRARIES(ig_add nel3d nelmisc)
+NL_DEFAULT_PROPS(ig_add "NeL, Tools, 3D: ig_add")
+NL_ADD_RUNTIME_FLAGS(ig_add)
+
+INSTALL(TARGETS ig_add RUNTIME DESTINATION ${NL_BIN_PREFIX} COMPONENT tools3d)

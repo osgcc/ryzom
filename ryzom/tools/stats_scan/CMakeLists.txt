@@ -1,0 +1,12 @@
+FILE(GLOB SRC *.cpp *.h)
+
+ADD_EXECUTABLE(stats_scan WIN32 ${SRC})
+
+INCLUDE_DIRECTORIES(${LIBXML2_INCLUDE_DIR})
+TARGET_LINK_LIBRARIES(stats_scan ryzom_gameshare ${LIBXML2_LIBRARIES} nelmisc nelnet nelligo nelgeorges)
+ADD_DEFINITIONS(${LIBXML2_DEFINITIONS})
+
+NL_DEFAULT_PROPS(stats_scan "Ryzom, Tools, Misc: Stats Scan")
+NL_ADD_RUNTIME_FLAGS(stats_scan)
+
+INSTALL(TARGETS stats_scan RUNTIME DESTINATION ${RYZOM_BIN_PREFIX} COMPONENT tools)

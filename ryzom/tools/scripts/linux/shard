@@ -1,0 +1,3 @@
+#!/bin/sh
+cd $RYZOM_PATH/server
+/bin/sh $RYZOM_PATH/tools/scripts/linux/ryzom_domain_screen_wrapper.sh $*
